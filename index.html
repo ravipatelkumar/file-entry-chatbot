@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="steel">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Entry Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <div class="stripe" aria-hidden="true"></div>
+
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">FE</div>
+        <div>
+          <h1>File Entry Assistant</h1>
+          <p>Chat with the assistant and upload files to create or update entries.</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <span class="status" id="status"><i></i><span id="statusText">Online</span></span>
+
+        <div class="theme-switch" role="radiogroup" aria-label="Theme">
+          <button type="button" role="radio" data-theme-btn="steel" title="Steel (light)" aria-label="Steel theme"></button>
+          <button type="button" role="radio" data-theme-btn="forge" title="Forge (dark)" aria-label="Forge theme"></button>
+          <button type="button" role="radio" data-theme-btn="blueprint" title="Blueprint" aria-label="Blueprint theme"></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="chat" class="chat" aria-live="polite">
+      <div class="message bot">
+        Hi! Tell me what you want to update, and upload your file when you're ready.
+      </div>
+    </main>
+
+    <div id="filePreview" class="file-preview" aria-hidden="true">
+      <span id="fileIcon" class="file-icon">📎</span>
+      <div class="file-info">
+        <strong id="selectedFileName"></strong>
+        <span id="selectedFileSize"></span>
+      </div>
+      <button id="removeFile" type="button" aria-label="Remove file">×</button>
+    </div>
+
+    <form id="composer" class="composer">
+      <label class="attach-btn" title="Upload file">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 11.5l-8.5 8.5a5 5 0 01-7-7L14 4.5a3.5 3.5 0 015 5L10.5 18a2 2 0 01-3-3L15 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <input id="fileInput" type="file" hidden>
+      </label>
+
+      <textarea id="messageInput" rows="1" placeholder="Type your message..." autocomplete="off"></textarea>
+
+      <button id="sendBtn" type="submit" title="Send" aria-label="Send">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+
+    <div class="hint">Enter to send &nbsp;/&nbsp; Shift + Enter for new line &nbsp;/&nbsp; Drop a file anywhere</div>
+
+    <div class="dropzone" id="dropzone" aria-hidden="true">
+      <div class="dropzone-inner">Drop file to attach</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
