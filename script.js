@@ -1,5 +1,5 @@
 // n8n Webhook URL
-const WEBHOOK_URL = "https://texts-cosmetics-carry-tiger.trycloudflare.com/webhook/file-entry";
+const WEBHOOK_URL = "https://amber-platforms-electron-trat.trycloudflare.com/webhook/file-entry";
 
 const app = document.getElementById("app");
 const chat = document.getElementById("chat");
